@@ -1,0 +1,19 @@
+import React from "react";
+
+import { BrowserRouter as Router } from "react-router-dom";
+import { Footer, Header } from "./app/layout";
+import BuildRoute from "./app/shared/BuildRoute/BuildRoute";
+import { appRoutes } from "./app/routes";
+function App() {
+  return (
+    <>
+      <Router>
+        <Header />
+        <BuildRoute routes={appRoutes} />
+        <Footer />
+      </Router>
+    </>
+  );
+}
+
+export default App;
