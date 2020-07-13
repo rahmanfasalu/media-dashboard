@@ -11,7 +11,9 @@ import { ScreenWidth } from "../../theme/media";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   let hourSize: number;
-  if (width >= ScreenWidth.pc) {
+  if (width >= ScreenWidth.large) {
+    hourSize = HOUR_SIZE.extraLarge;
+  } else if (width >= ScreenWidth.pc) {
     hourSize = HOUR_SIZE.lageScreen;
   } else if (width >= ScreenWidth.meduim) {
     hourSize = HOUR_SIZE.mediumScreen;
@@ -36,7 +38,6 @@ export default function useWindowDimensions() {
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

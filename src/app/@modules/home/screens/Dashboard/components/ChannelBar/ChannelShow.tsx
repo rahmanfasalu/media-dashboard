@@ -11,6 +11,7 @@ import {
   formatedTime,
 } from "../../../../../../utils/dashboard.util";
 import useWindowDimensions from "../../../../../../hooks/useWindowDimensions";
+import { useHistory } from "react-router-dom";
 
 /*
  * Interface
@@ -31,21 +32,29 @@ interface ShowStyledProps {
 const ChannleShow = ({ schedule }: { schedule: Schedule }): JSX.Element => {
   // get the hoursize based on the screen size;
   const { hourSize } = useWindowDimensions();
+  const history = useHistory();
   const miunteSize: number = getMinuteSize(hourSize);
   const left: number = getShowStartPoint(miunteSize, schedule.start);
   const width: number = getShowLength(miunteSize, schedule.start, schedule.end);
   const active: boolean = isActiveShow(schedule.start, schedule.end);
 
+  const viewDetails = () => {
+    let path = `/show/${schedule.id}`;
+    history.push(path);
+  };
+
   return (
     // Prefer inline styles for better performance over styled component
     <div
+      onClick={viewDetails}
       style={{
         position: "absolute",
         left: left + "px",
-        width: width + "px",
+        width: width - 1 + "px",
         background: active ? Theme.colors.show : Theme.colors.bg,
         zIndex: 10,
         height: "68px",
+        borderRight: `1px solid ${Theme.colors.gray}`,
       }}
     >
       <div

@@ -6,10 +6,11 @@ export const HOUR_LENGTH_IN_PX = 300;
  *  This hoursize will vary for the responsive porpose
  */
 export const HOUR_SIZE = {
-  lageScreen: 300,
-  mediumScreen: 200,
-  smallScreen: 100,
-  extraSmallScreen: 50,
+  extraLarge: 800,
+  lageScreen: 600,
+  mediumScreen: 500,
+  smallScreen: 300,
+  extraSmallScreen: 250,
 };
 
 /*

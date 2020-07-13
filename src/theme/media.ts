@@ -14,6 +14,7 @@ const sizes = {
 
 // Used to calculate the hour size;
 export const ScreenWidth = {
+  large: 2000,
   pc: 800,
   meduim: 600,
   small: 400,
