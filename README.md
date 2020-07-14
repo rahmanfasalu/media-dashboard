@@ -16,7 +16,7 @@ $ npm run start:dev
 
 - Media dashboard with channels and program info
 - Responsive dashboard screen, with re-render componenet on every resize.
-- Realtime time line, will udpated the position every minute.
+- Realtime timeline, will udpated the position every minute.
 - Dynamic channel height.
 - Now button for showing the current show screen.
 - Program detailed page with dynamic tabs
@@ -35,14 +35,14 @@ $ npm run start:dev
 - Typescript
 - Redux
 - Styled component for styling
-- node.js for creating local server
+- node.js local server
 
 # Folder Structure
 
 ```sh
 |-- media-dashboard
    |-- .env                                      // Create-react-app env for prod
-   |-- .env.development                          // Create-react-app env for prod
+   |-- .env.development                          // Create-react-app env for dev
    |-- README.md
    |-- package-lock.json
    |-- package.json
@@ -158,7 +158,7 @@ $ npm run start:dev
        |   |-- apiInterceptor.ts  // Axios interceptor
        |   |-- epgServices.ts     // Dashboard data services
        |   |-- responseHandler.ts // Custom success/error handler
-       |-- theme                 // For styled compoents
+       |-- theme                 // For styled compoents and theme
            |-- CommonStyles.tsx
            |-- GlobalStyle.tsx
            |-- fonts.d.ts
