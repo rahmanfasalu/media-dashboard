@@ -1,7 +1,5 @@
 import React from "react";
 
-import { useHistory } from "react-router-dom";
-import useWindowDimensions from "src/app/hooks/useWindowDimensions";
 import {
   getMinuteSize,
   getShowStartPoint,
@@ -28,10 +26,15 @@ interface ShowStyledProps {
  *
  * For render single show
  */
-const ChannleShow = ({ schedule }: { schedule: Schedule }): JSX.Element => {
-  // get the hoursize based on the screen size;
-  const { hourSize } = useWindowDimensions();
-  const history = useHistory();
+const ChannleShow = ({
+  schedule,
+  hourSize,
+  history,
+}: {
+  schedule: Schedule;
+  hourSize: number;
+  history: any;
+}): JSX.Element => {
   const miunteSize: number = getMinuteSize(hourSize);
   const left: number = getShowStartPoint(miunteSize, schedule.start);
   const width: number = getShowLength(miunteSize, schedule.start, schedule.end);

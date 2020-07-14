@@ -29,7 +29,17 @@ function getWindowDimensions() {
     hourSize,
   };
 }
-
+function throttled(delay: number, fn: Function) {
+  let lastCall = 0;
+  return function (...args: any[]) {
+    const now = new Date().getTime();
+    if (now - lastCall < delay) {
+      return;
+    }
+    lastCall = now;
+    return fn(...args);
+  };
+}
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
@@ -37,10 +47,12 @@ export default function useWindowDimensions() {
 
   useEffect(() => {
     function handleResize() {
+      console.log("called");
       setWindowDimensions(getWindowDimensions());
     }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const tHandler = throttled(400, handleResize);
+    window.addEventListener("resize", tHandler);
+    return () => window.removeEventListener("resize", tHandler);
   }, []);
 
   return windowDimensions;

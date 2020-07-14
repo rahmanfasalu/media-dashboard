@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import ChannelPrograms from "./ChannelPrograms";
-import { Channels } from "src/app/interfaces/channels.type";
+import { Channels, Schedule } from "src/app/interfaces/channels.type";
 import Theme from "src/theme/theme";
+import ChannleShow from "./ChannelShow";
+import { useHistory } from "react-router-dom";
 
+import useWindowDimensions from "src/app/hooks/useWindowDimensions";
 /*
  * Channel Bar Component
  *
  * Component will render the all the programs based props channels.
  * Programs size is calcualted bases on the hour size.
+ *
  */
 
 /**
@@ -19,16 +22,26 @@ interface ChannelProp {
   height: number;
 }
 const ChannelBar = ({ channels, height }: ChannelProp): JSX.Element => {
+  const history = useHistory();
+  const { hourSize } = useWindowDimensions();
   return (
     <ChannelContainer>
       {channels.map(
         (channel: Channels, index: number): JSX.Element => {
           return (
-            <Channel key={`Channel_${index}`} height={height}>
-              <ChannelPrograms
-                schedules={channel.schedules}
-                key={`Programs_${index}`}
-              />
+            <Channel height={height} key={`Channel_${index}`}>
+              {channel.schedules.map(
+                (schedule: Schedule, index: number): JSX.Element => {
+                  return (
+                    <ChannleShow
+                      history={history}
+                      hourSize={hourSize}
+                      schedule={schedule}
+                      key={`ChannleShow_${index}`}
+                    ></ChannleShow>
+                  );
+                }
+              )}
             </Channel>
           );
         }
