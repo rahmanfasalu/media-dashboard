@@ -17,8 +17,10 @@ const ProgramSeries = ({ series }: { series: Series[] }): JSX.Element => {
       return (
         <div key={`series_${index}`}>
           <h2>Episodes</h2>
-          {item.episodes.map((episode: Episodes) => (
-            <EpisodeContent>{episode.title}</EpisodeContent>
+          {item.episodes.map((episode: Episodes, index) => (
+            <EpisodeContent key={`episodes_${index}`}>
+              {episode.title}
+            </EpisodeContent>
           ))}
         </div>
       );
