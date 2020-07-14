@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 	  
 	body {
 		margin:0;
-		font-family: 'Open Sans';
+		font-family: Tahoma;
 		background: ${Theme.colors.bg};
 		color: ${Theme.colors.primary};
 		
