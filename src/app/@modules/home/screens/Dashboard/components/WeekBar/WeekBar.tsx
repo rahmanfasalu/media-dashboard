@@ -4,7 +4,6 @@ import { SideBar } from "src/app/shared";
 import WeekDays from "src/app/interfaces/weekdays.type";
 import Theme from "src/theme/theme";
 import { getWeekDays } from "src/app/utils/dashboardUtil";
-import { CHANNEL_BAND_HEIGHT } from "src/app/constants/dashboardConstants";
 
 /*
  * WeekBar Component
@@ -24,11 +23,10 @@ interface WeekDaysProps {
 const WeekBar = (): JSX.Element => {
   const weekDays: WeekDays[] = getWeekDays();
   const currDay: string = new Date().toString().split(" ")[0];
-  const ChannelBarHeight = CHANNEL_BAND_HEIGHT ?? 68;
   return (
     <div>
-      <WeekBarContainer height={ChannelBarHeight}>
-        <SideBar icon="fa-star" />
+      <WeekBarContainer height={70}>
+        <SideBar icon="fa-star" height={70} />
         {weekDays.map((weekday: WeekDays) => {
           return (
             <WeekDaysContainer

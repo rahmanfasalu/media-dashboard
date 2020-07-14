@@ -4,7 +4,7 @@ import Theme from "src/theme/theme";
 
 /*
  *  Shared: Tabs Using Styled Component
- *  Custom tab bat using styled component
+ *  Custom tab bar using styled component
  */
 
 interface TabPropsStyled {
@@ -25,6 +25,7 @@ function Tabs({ tabHeads, tabcontents }: TabProps) {
 
   return (
     <>
+      {/* Tab header loop */}
       <TabsHeaderContainer>
         {tabHeads?.map((head, index) => (
           <TabHeader
@@ -38,6 +39,8 @@ function Tabs({ tabHeads, tabcontents }: TabProps) {
           </TabHeader>
         ))}
       </TabsHeaderContainer>
+
+      {/* Tab content loop, each element as JSX elem */}
       <TabsContentContainer>
         {tabcontents?.map((content, index) => (
           <TabContent active={active === index} key={`tabContent_${index}`}>
@@ -48,8 +51,11 @@ function Tabs({ tabHeads, tabcontents }: TabProps) {
     </>
   );
 }
-export const TabsHeaderContainer = styled.div``;
 
+/*
+ *  Styled components
+ */
+export const TabsHeaderContainer = styled.div``;
 export const TabHeader = styled.div<TabPropsStyled>`
   cursor: pointer;
   position: relative;

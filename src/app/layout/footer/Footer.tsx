@@ -4,6 +4,17 @@ import styled from "styled-components";
 import Theme from "src/theme/theme";
 import { StyledNavLink, Fa } from "src/theme/CommonStyles";
 
+/*
+ *  Footer Layout
+ *  Application Footer child nav link
+ *  Child lick used as
+ *    - Landing : Home page landing screen
+ *    - Play : Home page play screen
+ *    - Rewind : Home page rewind screen
+ *    - Catalog : Home page catalog screen
+ *    - Dashboard : Streaming info page
+ */
+
 const Footer = (): JSX.Element => (
   <FooterContainer>
     <StyledNavLink to="/home/landing">
@@ -24,6 +35,9 @@ const Footer = (): JSX.Element => (
   </FooterContainer>
 );
 
+/*
+ *  Styled components
+ */
 const FooterContainer = styled.div`
   position: fixed;
   bottom: 0;

@@ -19,15 +19,23 @@ import { Channels } from "src/app/interfaces/channels.type";
 interface ChannelSideBarProp {
   channels: Channels[];
   top?: number; // for dynamic height poisitoning
+  tileHeight?: number; // dynmic sidebat height
 }
-const ChannelSideBar = ({ channels, top }: ChannelSideBarProp): JSX.Element => {
-  console.log(top);
+const ChannelSideBar = ({
+  channels,
+  top,
+  tileHeight,
+}: ChannelSideBarProp): JSX.Element => {
   return (
     <ChannelSideBarContainer top={top ? top + 53 : 225}>
       {channels.map(
         (channel: Channels, index: number): JSX.Element => {
           return (
-            <SideBar image={channel.images.logo} key={`SideBar_${index}`} />
+            <SideBar
+              image={channel.images.logo}
+              key={`SideBar_${index}`}
+              height={tileHeight}
+            />
           );
         }
       )}

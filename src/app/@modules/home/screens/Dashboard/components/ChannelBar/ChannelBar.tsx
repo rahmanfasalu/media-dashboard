@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ChannelPrograms from "./ChannelPrograms";
 import { Channels } from "src/app/interfaces/channels.type";
 import Theme from "src/theme/theme";
-import { CHANNEL_BAND_HEIGHT } from "src/app/constants/dashboardConstants";
 
 /*
  * Channel Bar Component
@@ -17,15 +16,15 @@ import { CHANNEL_BAND_HEIGHT } from "src/app/constants/dashboardConstants";
  */
 interface ChannelProp {
   channels: Channels[];
+  height: number;
 }
-const ChannelBar = ({ channels }: ChannelProp): JSX.Element => {
-  const ChannelBarHeight = CHANNEL_BAND_HEIGHT ?? 68;
+const ChannelBar = ({ channels, height }: ChannelProp): JSX.Element => {
   return (
     <ChannelContainer>
       {channels.map(
         (channel: Channels, index: number): JSX.Element => {
           return (
-            <Channel key={`Channel_${index}`} height={ChannelBarHeight}>
+            <Channel key={`Channel_${index}`} height={height}>
               <ChannelPrograms
                 schedules={channel.schedules}
                 key={`Programs_${index}`}

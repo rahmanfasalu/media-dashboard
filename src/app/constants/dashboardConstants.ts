@@ -1,5 +1,3 @@
-export const CHANNEL_BAND_HEIGHT = 70;
-
 /*
  *  Hour Size
  *  Each show postion will be calculated based on the hour size.

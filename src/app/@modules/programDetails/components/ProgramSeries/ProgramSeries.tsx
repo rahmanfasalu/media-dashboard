@@ -6,13 +6,18 @@ import Theme from "src/theme/theme";
 
 /*
  *  ProgramSeries Component
+ *  Wrapper component for program series
+ *  The component will accept program series and return a tab with series title and content.
  */
 const ProgramSeries = ({ series }: { series: Series[] }): JSX.Element => {
   const getTabeTitles = (series: Series[]): string[] => {
     return series?.map((item) => item.title);
   };
 
-  const getTabeContent = (series: Series[]) => {
+  /*
+   * Create Array of jsx element from input data
+   */
+  const getTabeContent = (series: Series[]): JSX.Element[] => {
     return series?.map((item, index) => {
       return (
         <div key={`series_${index}`}>
@@ -29,6 +34,7 @@ const ProgramSeries = ({ series }: { series: Series[] }): JSX.Element => {
 
   return (
     <ProgramSeriesContainer>
+      {/* Tab component with title and content as jsx ele array */}
       <Tabs
         tabHeads={getTabeTitles(series)}
         tabcontents={getTabeContent(series)}
@@ -37,6 +43,9 @@ const ProgramSeries = ({ series }: { series: Series[] }): JSX.Element => {
   );
 };
 
+/*
+ * Styled components
+ */
 const ProgramSeriesContainer = styled.div`
   padding: 25px 15px;
 `;

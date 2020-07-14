@@ -1,13 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
-import { WeekBar, TimeBar, ChannelBar, ChannelSideBar } from "./components";
+import {
+  WeekBar,
+  TimeBar,
+  ChannelBar,
+  ChannelSideBar,
+  RangeHeightSlider,
+} from "./components";
 import {
   currentShowScreenPosition,
   getScrollableBarWidth,
 } from "src/app/utils/dashboardUtil";
-import { Button, TimeLine, SideBar } from "src/app/shared";
+import { Button, TimeLine } from "src/app/shared";
 import { DisableScrollBar } from "src/theme/CommonStyles";
 import { Channels } from "src/app/interfaces/channels.type";
 import useWindowDimensions from "src/app/hooks/useWindowDimensions";
@@ -23,6 +29,7 @@ import { AppStateType } from "src/app/interfaces/app.state.type";
  *    - TimeBar : For rendering Timline of 0-24 hour, hour length is calculated based on the
  *                hoursize, default hour size is 300px.
  *    - ChannelBar : For rendering channled and programs info.
+ *    - Channel Sidebar : one component to render all the sidebar
  *
  */
 
@@ -35,6 +42,7 @@ interface StreanContainerProps {
 function Dashboard(): JSX.Element {
   const dispatch = useDispatch();
   const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const [barHeight, setBarHeight] = useState<number>(70);
 
   // get the hoursize based on the screen size;
   const { hourSize, width: currentScreenWidth } = useWindowDimensions();
@@ -71,6 +79,11 @@ function Dashboard(): JSX.Element {
   return (
     <DashboardContainer>
       {/* 
+           For Dynamic height for channel, not is scope
+           */}
+      <RangeHeightSlider barHeight={barHeight} setBarHeight={setBarHeight} />
+
+      {/* 
            Weekbar with current days of the week
            */}
       <WeekBar />
@@ -80,6 +93,7 @@ function Dashboard(): JSX.Element {
            */}
       <ChannelSideBar
         channels={channels}
+        tileHeight={barHeight}
         top={containerRef?.current?.offsetTop}
       />
 
@@ -96,7 +110,7 @@ function Dashboard(): JSX.Element {
           <TimeBar></TimeBar>
 
           {/* Channel data */}
-          <ChannelBar channels={channels}></ChannelBar>
+          <ChannelBar channels={channels} height={barHeight}></ChannelBar>
         </StreamContainer>
       </ProgramContainer>
 
@@ -114,8 +128,8 @@ function Dashboard(): JSX.Element {
  *  Styled Components
  */
 const ButtonWrapper = styled.div`
-  position: absolute;
-  bottom: 50px;
+  position: fixed;
+  bottom: 75px;
   right: 50px;
   z-index: 999;
 `;

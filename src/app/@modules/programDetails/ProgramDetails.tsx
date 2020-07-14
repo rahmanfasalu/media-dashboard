@@ -14,7 +14,7 @@ import ProgramSeries from "./components/ProgramSeries/ProgramSeries";
  *
  *  Information about the selected program
  *  Component used in this moduels are
- *    -
+ *    - Program Series - for generating tabs from program series
  *
  */
 

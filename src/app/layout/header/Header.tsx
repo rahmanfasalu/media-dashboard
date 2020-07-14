@@ -6,6 +6,11 @@ import SearchBox from "./SearchBox";
 import logo from "../../../assets/logo.jpeg";
 import Theme from "src/theme/theme";
 
+/*
+ *  Header Layout
+ *  Application Header with icon, logo and search bar
+ *
+ */
 const Header = (): JSX.Element => {
   const [, setQuery] = useState("");
   return (
@@ -18,6 +23,7 @@ const Header = (): JSX.Element => {
       <Menu>
         <Logo src={logo} alt="logo"></Logo>
       </Menu>
+
       <Menu>
         <SearchBox setQuery={setQuery} />
       </Menu>
@@ -25,6 +31,9 @@ const Header = (): JSX.Element => {
   );
 };
 
+/*
+ *  Styled components
+ */
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -38,7 +47,7 @@ const HeaderContainer = styled.div`
 
 const Logo = styled.img`
   width: 80px;
-  height: 80px;
+  height: 60px;
 `;
 const Menu = styled.div`
   .fa-user {
