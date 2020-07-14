@@ -47,7 +47,6 @@ export default function useWindowDimensions() {
 
   useEffect(() => {
     function handleResize() {
-      console.log("called");
       setWindowDimensions(getWindowDimensions());
     }
     const tHandler = throttled(400, handleResize);
