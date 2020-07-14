@@ -10,6 +10,7 @@ export async function handleResponse(response: any) {
 
 // Error Handler. In a real app, would likely call an error logging service.
 export function handleError(error: any) {
+  alert("Please run npm run start:dev");
   // eslint-disable-next-line no-console
   console.error("API call failed. " + error);
   throw error;
