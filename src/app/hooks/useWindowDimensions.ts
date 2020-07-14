@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { HOUR_SIZE } from "../constants/dashboard.constants";
-import { ScreenWidth } from "../../theme/media";
+
+import { ScreenWidth } from "src/theme/media";
+import { HOUR_SIZE } from "../constants/dashboardConstants";
 
 /*
  *  HOOK: WindowDimension

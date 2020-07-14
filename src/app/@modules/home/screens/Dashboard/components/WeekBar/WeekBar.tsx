@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
-import { SideBar } from "../../../../../../shared";
-import { getWeekDays } from "../../../../../../utils/dashboard.util";
-import WeekDays from "../../../../../../interfaces/weekdays.type";
-import Theme from "../../../../../../../theme/theme";
+import { SideBar } from "src/app/shared";
+import WeekDays from "src/app/interfaces/weekdays.type";
+import Theme from "src/theme/theme";
+import { getWeekDays } from "src/app/utils/dashboardUtil";
+import { CHANNEL_BAND_HEIGHT } from "src/app/constants/dashboardConstants";
 
 /*
  * WeekBar Component
@@ -24,10 +24,10 @@ interface WeekDaysProps {
 const WeekBar = (): JSX.Element => {
   const weekDays: WeekDays[] = getWeekDays();
   const currDay: string = new Date().toString().split(" ")[0];
-
+  const ChannelBarHeight = CHANNEL_BAND_HEIGHT ?? 68;
   return (
     <div>
-      <WeekBarContainer>
+      <WeekBarContainer height={ChannelBarHeight}>
         <SideBar icon="fa-star" />
         {weekDays.map((weekday: WeekDays) => {
           return (
@@ -50,14 +50,14 @@ const WeekBar = (): JSX.Element => {
 /**
  *  Styled components
  */
-const WeekBarContainer = styled.div`
+const WeekBarContainer = styled.div<{ height: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${Theme.colors.secondary};
   padding: 0;
   position: relative;
-  height: 70px;
+  height: ${(height) => height + "px"};
 `;
 
 const WeekDaysContainer = styled.div<WeekDaysProps>`

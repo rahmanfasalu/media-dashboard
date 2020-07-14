@@ -2,18 +2,17 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
-import { WeekBar, TimeBar, ChannelBar } from "./components";
+import { WeekBar, TimeBar, ChannelBar, ChannelSideBar } from "./components";
 import {
-  getScrollableBarWidth,
   currentShowScreenPosition,
-} from "../../../../utils/dashboard.util";
-import { DisableScrollBar } from "../../../../../theme/CommonStyles";
-import { Channels } from "../../../../interfaces/channels.type";
-import { AppStateType } from "../../../../interfaces/app.state.type";
-import { loadChannelData } from "../../../../stor/actions/channelActions";
-import TimeLine from "../../../../shared/TimeLine/TimeLine";
-import useWindowDimensions from "../../../../hooks/useWindowDimensions";
-import { Button } from "../../../../shared";
+  getScrollableBarWidth,
+} from "src/app/utils/dashboardUtil";
+import { Button, TimeLine, SideBar } from "src/app/shared";
+import { DisableScrollBar } from "src/theme/CommonStyles";
+import { Channels } from "src/app/interfaces/channels.type";
+import useWindowDimensions from "src/app/hooks/useWindowDimensions";
+import { loadChannelData } from "src/app/stor/actions/channelActions";
+import { AppStateType } from "src/app/interfaces/app.state.type";
 
 /*
  *  Screen Dashboard
@@ -69,13 +68,21 @@ function Dashboard(): JSX.Element {
   useEffect(() => {
     scrollToTheCurrntShow();
   }, [channels, hourSize]);
-
   return (
     <DashboardContainer>
+      {/* 
+           Weekbar with current days of the week
+           */}
       <WeekBar />
-      <ButtonWrapper>
-        <Button name="Now" callback={scrollToTheCurrntShow} />
-      </ButtonWrapper>
+
+      {/* 
+           Channle sidebars
+           */}
+      <ChannelSideBar
+        channels={channels}
+        top={containerRef?.current?.offsetTop}
+      />
+
       <ProgramContainer ref={containerRef}>
         <StreamContainer width={`${getScrollableBarWidth(hourSize)}px`}>
           {/* 
@@ -90,9 +97,15 @@ function Dashboard(): JSX.Element {
 
           {/* Channel data */}
           <ChannelBar channels={channels}></ChannelBar>
-          <br />
         </StreamContainer>
       </ProgramContainer>
+
+      {/* 
+             Button Now, for to slide to the current show section
+           */}
+      <ButtonWrapper>
+        <Button name="Now" callback={scrollToTheCurrntShow} />
+      </ButtonWrapper>
     </DashboardContainer>
   );
 }
@@ -106,7 +119,9 @@ const ButtonWrapper = styled.div`
   right: 50px;
   z-index: 999;
 `;
-const DashboardContainer = styled.div``;
+const DashboardContainer = styled.div`
+  margin-top: 100px;
+`;
 const ProgramContainer = styled(DisableScrollBar)`
   overflow: scroll;
   position: relative;
@@ -116,6 +131,6 @@ const StreamContainer = styled(DisableScrollBar)<StreanContainerProps>`
   width: ${({ width }) => {
     return width ? width : "7200px";
   }};
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 `;
 export default Dashboard;

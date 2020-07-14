@@ -1,7 +1,9 @@
 import React from "react";
 import { Switch } from "react-router-dom";
 import { homeRoutes } from "../../routes";
-import BuildRoute from "../../shared/BuildRoute/BuildRoute";
+
+import { Footer } from "src/app/layout";
+import BuildRoute from "src/app/shared/BuildRoute/BuildRoute";
 
 /*
  * Module Home
@@ -21,6 +23,7 @@ const Home = (): JSX.Element => {
       <Switch>
         <BuildRoute routes={homeRoutes} />
       </Switch>
+      <Footer />
     </>
   );
 };

@@ -10,7 +10,6 @@ function App() {
       <Router>
         <Header />
         <BuildRoute routes={appRoutes} />
-        <Footer />
       </Router>
     </>
   );

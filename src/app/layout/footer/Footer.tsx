@@ -1,7 +1,8 @@
 import React from "react";
-import { StyledNavLink, Fa } from "../../../theme/CommonStyles";
 import styled from "styled-components";
-import Theme from "../../../theme/theme";
+
+import Theme from "src/theme/theme";
+import { StyledNavLink, Fa } from "src/theme/CommonStyles";
 
 const Footer = (): JSX.Element => (
   <FooterContainer>

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Theme from "../../../theme/theme";
-import useCurrentTimeInMinutes from "../../hooks/useCurrentTimeInMinutes";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useCurrentTimeInMinutes from "src/app/hooks/useCurrentTimeInMinutes";
+import useWindowDimensions from "src/app/hooks/useWindowDimensions";
+import Theme from "src/theme/theme";
 
 /*
  *  Shared: TimeLine

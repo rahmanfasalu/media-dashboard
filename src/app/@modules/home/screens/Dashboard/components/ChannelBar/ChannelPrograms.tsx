@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Schedule } from "../../../../../../interfaces/channels.type";
 import ChannleShow from "./ChannelShow";
+import { Schedule } from "src/app/interfaces/channels.type";
 
 /*
  * Channel Programs Components

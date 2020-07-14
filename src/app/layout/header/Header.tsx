@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import SearchBox from "./SearchBox";
 import logo from "../../../assets/logo.jpeg";
-import Theme from "../../../theme/theme";
+import Theme from "src/theme/theme";
 
 const Header = (): JSX.Element => {
   const [, setQuery] = useState("");
@@ -28,9 +28,12 @@ const Header = (): JSX.Element => {
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  background: ${Theme.colors.bg};
+  padding: 10px 0;
   height: 80px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 999;
 `;
 
 const Logo = styled.img`
@@ -38,7 +41,6 @@ const Logo = styled.img`
   height: 80px;
 `;
 const Menu = styled.div`
-  position: relative;
   .fa-user {
     font-size: 45px;
     color: ${Theme.colors.white};

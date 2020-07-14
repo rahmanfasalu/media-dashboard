@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Theme from "../../../theme/theme";
+import Theme from "src/theme/theme";
 
 const SearchBox = ({
   setQuery,
@@ -42,7 +42,6 @@ const SearchBox = ({
 
 const SearchWrapper = styled.div`
   position: relative;
-  width: 320px;
   margin: 0 auto;
   display: block;
   height: 53px;

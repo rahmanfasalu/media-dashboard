@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Schedule } from "../../../../../../interfaces/channels.type";
-import Theme from "../../../../../../../theme/theme";
-
+import { useHistory } from "react-router-dom";
+import useWindowDimensions from "src/app/hooks/useWindowDimensions";
 import {
   getMinuteSize,
-  getShowLength,
   getShowStartPoint,
+  getShowLength,
   isActiveShow,
   formatedTime,
-} from "../../../../../../utils/dashboard.util";
-import useWindowDimensions from "../../../../../../hooks/useWindowDimensions";
-import { useHistory } from "react-router-dom";
+} from "src/app/utils/dashboardUtil";
+import { Schedule } from "src/app/interfaces/channels.type";
+import Theme from "src/theme/theme";
+import { CHANNEL_BAND_HEIGHT } from "src/app/constants/dashboardConstants";
 
 /*
  * Interface
@@ -38,6 +38,8 @@ const ChannleShow = ({ schedule }: { schedule: Schedule }): JSX.Element => {
   const width: number = getShowLength(miunteSize, schedule.start, schedule.end);
   const active: boolean = isActiveShow(schedule.start, schedule.end);
 
+  const showHieght = CHANNEL_BAND_HEIGHT ?? 68;
+
   const viewDetails = () => {
     let path = `/show/${schedule.id}`;
     history.push(path);
@@ -53,7 +55,7 @@ const ChannleShow = ({ schedule }: { schedule: Schedule }): JSX.Element => {
         width: width - 1 + "px",
         background: active ? Theme.colors.show : Theme.colors.bg,
         zIndex: 10,
-        height: "68px",
+        height: `${showHieght}px`,
         borderRight: `1px solid ${Theme.colors.gray}`,
       }}
     >

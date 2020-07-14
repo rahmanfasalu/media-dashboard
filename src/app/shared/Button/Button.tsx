@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Theme from "../../../theme/theme";
+import Theme from "src/theme/theme";
 
 /*
  *  Shared: Button

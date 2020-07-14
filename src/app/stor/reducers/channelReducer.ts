@@ -4,7 +4,7 @@ import initialState from "../initialState";
 import { channelsActionTypes } from "../actionTypes/channelsActionTypes";
 import { Channels } from "../../interfaces/channels.type";
 
-export default function dataReducer(
+export default function channelReducer(
   state: Channels[] = initialState.channels,
   action: channelsActionTypes
 ) {

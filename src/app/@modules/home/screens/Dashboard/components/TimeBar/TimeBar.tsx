@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Theme from "../../../../../../../theme/theme";
-import useWindowDimensions from "../../../../../../hooks/useWindowDimensions";
+import Theme from "src/theme/theme";
+import useWindowDimensions from "src/app/hooks/useWindowDimensions";
 
 /*
  * Time Bar Component

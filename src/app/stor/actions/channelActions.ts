@@ -1,7 +1,7 @@
 import { Channels } from "../../interfaces/channels.type";
 import * as types from "../actionTypes/channelsActionTypes";
-import { epgServices } from "../../../services/epg.services";
-import { API } from "../../constants/dashboard.constants";
+import { epgServices } from "../../../services/epgServices";
+import { API } from "../../constants/dashboardConstants";
 
 export const loadDataActionSuccess = (
   data: Channels[]

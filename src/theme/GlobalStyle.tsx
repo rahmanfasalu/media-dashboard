@@ -1,10 +1,19 @@
 import { createGlobalStyle } from "styled-components";
-
+import { css } from "styled-components";
 import Theme from "./theme";
 import { Media } from "./media";
 
+// import openSans from "../assets/fonts/Open_Sans/OpenSans-Light.ttf";
+// export const fontFaces = css`
+//   @font-face {
+//     font-family: "Open Sans";
+//     src: url(${openSans}) format("ttf");
+//     font-style: normal;
+//   }
+// `;
+
 const GlobalStyle = createGlobalStyle`
-				
+   
 	::selection {
 		color: ${Theme.colors.primary};
 		background: ${Theme.colors.bg};
@@ -13,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 		height: 100%;
 	  }
 	  body,#root {
-		min-height: 100%;
+		
 	  }
 	  
 	body {
@@ -21,13 +30,17 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Open Sans';
 		background: ${Theme.colors.bg};
 		color: ${Theme.colors.primary};
-		@media ${Media.phone} {
 		
-		}
 	}
-
+   
+	.shadow{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, black, transparent);
+	}
 	h1, h2, h3, h4 {
-		color: ${Theme.colors.primary};
+		color: ${Theme.colors.white};
 	}
 
 

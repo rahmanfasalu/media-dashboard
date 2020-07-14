@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
-import { Fa, ContentCenter } from "../../../theme/CommonStyles";
-import Theme from "../../../theme/theme";
+import { Fa, ContentCenter } from "src/theme/CommonStyles";
+import Theme from "src/theme/theme";
+import { CHANNEL_BAND_HEIGHT } from "src/app/constants/dashboardConstants";
 
 /*
  *  Shared: SideBar
@@ -13,10 +13,12 @@ import Theme from "../../../theme/theme";
 interface SideBarType {
   image?: string;
   icon?: string;
+  height?: number;
 }
-const SideBar = ({ image, icon }: SideBarType): JSX.Element => {
+const SideBar = ({ image, icon, height }: SideBarType): JSX.Element => {
+  const sideBarHeight = height ?? CHANNEL_BAND_HEIGHT;
   return (
-    <SideBarContainer>
+    <SideBarContainer height={sideBarHeight}>
       {image && <Img src={image} alt="" />}
       {!image && icon && <Fa className={`${icon} fa`}></Fa>}
     </SideBarContainer>
@@ -32,17 +34,16 @@ const Img = styled.img`
   max-height: 80%;
 `;
 
-const SideBarContainer = styled(ContentCenter)`
+const SideBarContainer = styled(ContentCenter)<{ height: number }>`
   width: 100px;
-  position: sticky;
   background: ${Theme.colors.secondary};
   left: 0;
   box-shadow: 10px 0 10px 1px ${Theme.colors.primary};
-  height: 68px;
-  top: 0;
+  height: ${({ height }) => height + "px"};
   z-index: 100;
-  float: left;
   cursor: pointer;
+  position: relative;
+  margin-bottom: 1px;
 `;
 
 export default SideBar;

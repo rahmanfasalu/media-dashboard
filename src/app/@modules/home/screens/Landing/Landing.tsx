@@ -5,7 +5,15 @@ import { ScreenContainer } from "src/theme/CommonStyles";
  *  Landing Screen
  */
 function Landing(): JSX.Element {
-  return <ScreenContainer>Landing page</ScreenContainer>;
+  return (
+    <div>
+      <img
+        src="https://img.noriginmedia.com/cloudberry/categories_vikings.jpg"
+        alt="vikings"
+        width={"100%"}
+      />
+    </div>
+  );
 }
 
 export default Landing;

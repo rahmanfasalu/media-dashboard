@@ -1,4 +1,4 @@
-export const HOUR_LENGTH_IN_PX = 300;
+export const CHANNEL_BAND_HEIGHT = 70;
 
 /*
  *  Hour Size
@@ -18,4 +18,5 @@ export const HOUR_SIZE = {
  */
 export const API = {
   epg: "/channels",
+  programInfo: "/programInfo/$$",
 };
