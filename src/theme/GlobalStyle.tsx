@@ -1,16 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { css } from "styled-components";
 import Theme from "./theme";
-import { Media } from "./media";
-
-// import openSans from "../assets/fonts/Open_Sans/OpenSans-Light.ttf";
-// export const fontFaces = css`
-//   @font-face {
-//     font-family: "Open Sans";
-//     src: url(${openSans}) format("ttf");
-//     font-style: normal;
-//   }
-// `;
 
 const GlobalStyle = createGlobalStyle`
    

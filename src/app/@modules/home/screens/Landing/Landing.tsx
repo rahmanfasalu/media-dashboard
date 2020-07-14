@@ -1,5 +1,4 @@
 import React from "react";
-import { ScreenContainer } from "src/theme/CommonStyles";
 
 /*
  *  Landing Screen

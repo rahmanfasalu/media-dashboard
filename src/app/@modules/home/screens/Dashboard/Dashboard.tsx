@@ -70,7 +70,7 @@ function Dashboard(): JSX.Element {
   // React hook to fetch channle data
   useEffect(() => {
     dispatch(loadChannelData());
-  }, []);
+  }, [dispatch]);
 
   // React hook to scroll to the current show position, if the hoursize or channles data changed
   useEffect(() => {

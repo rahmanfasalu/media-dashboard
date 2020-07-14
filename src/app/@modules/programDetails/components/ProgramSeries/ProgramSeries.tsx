@@ -50,10 +50,6 @@ const ProgramSeriesContainer = styled.div`
   padding: 25px 15px;
 `;
 
-const EpisodeTitle = styled.div`
-  font-color: ${Theme.colors.white};
-`;
-
 const EpisodeContent = styled.div`
   color: ${Theme.colors.white};
   width: 100%;

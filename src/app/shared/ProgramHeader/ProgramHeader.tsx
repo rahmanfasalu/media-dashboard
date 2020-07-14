@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
-import { getshowDuration } from "src/app/utils/dashboardUtil";
-import Theme from "src/theme/theme";
 import { ProgramInfo } from "src/app/interfaces/programs.details.type";
 import {
   SemiHeader,
