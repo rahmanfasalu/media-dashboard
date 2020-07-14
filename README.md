@@ -10,7 +10,7 @@ $ npm run start:dev
 ```
 
 > npm stard:dev will start a json server with channels info and with program details.
-> Used same data for program details page
+> Used same data for all the programs details page
 
 # Features
 
