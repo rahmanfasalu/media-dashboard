@@ -7,6 +7,7 @@ $ git clone https://github.com/rahmanfasalu/media-dashboard.git
 $ cd media-dashboard
 $ npm install
 $ npm run start:dev
+$ open http://localhost:3000/home/dashboard in browser
 ```
 
 > npm stard:dev will start a json server with channels info and with program details.
