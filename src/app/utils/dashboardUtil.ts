@@ -135,9 +135,10 @@ export const formatedTime = (date: string): string => {
  * Get ime in HH:MM formate
  */
 export const getshowDuration = (start: string, end: string): string => {
-  var dateObj = (new Date(end) as any) - (new Date(start) as any);
-  return new Date(dateObj).toLocaleTimeString(navigator.language, {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  const diff = _getMinutes(end) - _getMinutes(start);
+  const hours = diff / 60;
+  const rhours = Math.floor(hours);
+  const minutes = (hours - rhours) * 60;
+  const rminutes = Math.round(minutes);
+  return `${rhours}:${rminutes}`;
 };
