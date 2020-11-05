@@ -4,7 +4,7 @@
       "id": "sky1",
       "title": "Sky 1",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_sky1.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_sky1.png"
       },
       "schedules": [
         {
@@ -259,7 +259,7 @@
       "id": "silver",
       "title": "Silver",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_silver.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_silver.png"
       },
       "schedules": [
         {
@@ -526,7 +526,7 @@
       "id": "hbo",
       "title": "HBO",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_hbo.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_hbo.png"
       },
       "schedules": [
         {
@@ -769,7 +769,7 @@
       "id": "cw",
       "title": "The CW",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_cw.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_cw.png"
       },
       "schedules": [
         {
@@ -1030,7 +1030,7 @@
       "id": "vox",
       "title": "Vox",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_vox.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_vox.png"
       },
       "schedules": [
         {
@@ -1285,7 +1285,7 @@
       "id": "history",
       "title": "History",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_history.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_history.png"
       },
       "schedules": [
         {
@@ -1564,7 +1564,7 @@
       "id": "sixx",
       "title": "Sixx",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_sixx.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_sixx.png"
       },
       "schedules": [
         {
@@ -1801,7 +1801,7 @@
       "id": "tv2norway",
       "title": "TV 2 Norway",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_tv2.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_tv2.png"
       },
       "schedules": [
         {
@@ -2044,7 +2044,7 @@
       "id": "channel5",
       "title": "Channel 5",
       "images": {
-        "logo": "https://img.noriginmedia.com/cloudberry/logo_channel5.png"
+        "logo": "http://img.noriginmedia.com/cloudberry/logo_channel5.png"
       },
       "schedules": [
         {
